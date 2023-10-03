@@ -26,7 +26,7 @@ foreach ($blob in $blobs) {
     $daysOld = ($currentDate - $lastModifiedDate).Days
 
     # If the blob is older than 90 days, delete it
-    if ($daysOld -gt 30) {
+    if ($daysOld -gt 90) {
         Remove-AzStorageBlob -Container $containerName -Blob $blob.Name -Context $context
     }
 }
